@@ -9,11 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Правилният PayPal скрипт -->
-    <script 
-      src="https://www.paypal.com/sdk/js?client-id=BAA-Ocu1jMsrbjSYwtk7sMget3_rSxADbhsLi3MsKpRSCQbNLUSuIuVv_KkntQ2ZqLg_x1zzehldPldiqw&components=hosted-buttons&disable-funding=venmo&currency=USD">
-    </script>
-
     <style>
         html {
             scroll-behavior: smooth;
@@ -58,8 +53,9 @@
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">Спрете да губите време с посредствени AI резултати.</h1>
             <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Представяме Ви <span class="font-bold text-indigo-600">AI Content Engine</span> – професионален пакет с 25+ стратегически промпта, създадени да превърнат Вашия AI асистент в експертен маркетинг екип.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                 <!-- Уникален ID за бутона в хедъра -->
-                <div id="paypal-container-header" class="w-full sm:w-auto"></div>
+                <a href="https://www.paypal.com/ncp/payment/HAL5B753D92LS" target="_blank" class="inline-block bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg w-full sm:w-auto">
+                    Купи с PayPal
+                </a>
                 
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vladiatorai@gmail.com" target="_blank" class="inline-block bg-white text-indigo-600 border border-slate-300 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-100 transition-transform transform hover:scale-105 shadow-lg w-full sm:w-auto">
                     пиши ми за да ги получиш
@@ -155,8 +151,9 @@
             <h2 class="text-3xl font-extrabold mb-4">Готови ли сте да поемете контрол над вашето AI съдържание?</h2>
             <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Инвестирайте в система, която работи. Спестете часове и създавайте маркетинг съдържание от най-високо ниво.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                <!-- Уникален ID за бутона във футъра -->
-                <div id="paypal-container-footer" class="w-full sm:w-auto"></div>
+                <a href="https://www.paypal.com/ncp/payment/HAL5B753D92LS" target="_blank" class="inline-block bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-transform transform hover:scale-105 w-full sm:w-auto">
+                    Купи с PayPal
+                </a>
 
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vladiatorai@gmail.com" target="_blank" class="inline-block bg-transparent text-white border-2 border-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-slate-900 transition-colors transform hover:scale-105 w-full sm:w-auto">
                     пиши ми за да ги получиш
@@ -199,36 +196,6 @@
 
     </div>
     
-    <!-- PayPal скриптове за рендиране на бутоните -->
-    <script>
-      // Рендираме ОРИГИНАЛНИЯ бутон в хедъра
-      paypal.HostedButtons({
-        hostedButtonId: "KX6N86RE4U7S4",
-      }).render("#paypal-container-header");
-
-      // Клонираме бутона, след като се появи
-      try {
-        const observer = new MutationObserver((mutationsList, observer) => {
-            for(const mutation of mutationsList) {
-                if (mutation.type === 'childList') {
-                    const paypalHeaderButton = document.querySelector("#paypal-container-header iframe");
-                    if (paypalHeaderButton) {
-                        const footerContainer = document.querySelector("#paypal-container-footer");
-                        if (footerContainer && footerContainer.children.length === 0) {
-                           const clonedButton = paypalHeaderButton.cloneNode(true);
-                           footerContainer.appendChild(clonedButton);
-                           observer.disconnect(); // Спираме да следим, след като сме го направили
-                        }
-                    }
-                }
-            }
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-      } catch (error) {
-        console.error("PayPal button cloning failed:", error);
-      }
-    </script>
-
     <script>
         const promptData = {
             "tab-1": {
