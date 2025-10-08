@@ -8,7 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Правилният PayPal скрипт -->
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAA-Ocu1jMsrbjSYwtk7sMget3_rSxADbhsLi3MsKpRSCQbNLUSuIuVv_KkntQ2ZqLg_x1zzehldPldiqw&components=hosted-buttons&disable-funding=venmo&currency=USD">
+    </script>
+
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* slate-50 */
@@ -44,25 +53,22 @@
 
     <div class="container mx-auto px-4 py-12 md:py-20 max-w-5xl">
         
-        <!-- Header Section -->
-        <header class="text-center mb-16 fade-in">
+        <header id="purchase-header" class="text-center mb-16 fade-in">
             <span class="inline-block bg-indigo-100 text-indigo-700 text-sm font-semibold px-4 py-1 rounded-full mb-4">ПРОФЕСИОНАЛЕН ПАКЕТ С ПРОМПТОВЕ</span>
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 leading-tight">Спрете да губите време с посредствени AI резултати.</h1>
             <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Представяме Ви <span class="font-bold text-indigo-600">AI Content Engine</span> – професионален пакет с 25+ стратегически промпта, създадени да превърнат Вашия AI асистент в експертен маркетинг екип.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://www.upwork.com/services/product/marketing-ai-content-engine-25-marketing-prompts-1975521074345615646?ref=fl_profile" target="_blank" class="inline-block bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-lg w-full sm:w-auto">
-                    Купи пакета сега
-                </a>
+                 <!-- Уникален ID за бутона в хедъра -->
+                <div id="paypal-container-header" class="w-full sm:w-auto"></div>
+                
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vladiatorai@gmail.com" target="_blank" class="inline-block bg-white text-indigo-600 border border-slate-300 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-100 transition-transform transform hover:scale-105 shadow-lg w-full sm:w-auto">
                     пиши ми за да ги получиш
                 </a>
             </div>
         </header>
 
-        <!-- Product Showcase Section -->
         <section class="fade-in" style="animation-delay: 0.2s;">
             <div class="bg-slate-900 rounded-2xl shadow-2xl p-6 md:p-8">
-                <!-- Tabs -->
                 <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
                     <button class="tab-btn active text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-1">
                         <span class="block">Brand Strategy</span>
@@ -86,14 +92,11 @@
                     </button>
                 </div>
 
-                <!-- Tab Content -->
                 <div id="tab-content" class="bg-white rounded-lg p-6 min-h-[300px]">
-                    <!-- Content will be injected here by JS -->
                 </div>
             </div>
         </section>
 
-        <!-- How It Works Section -->
         <section class="text-center py-16 fade-in" style="animation-delay: 0.4s;">
             <h2 class="text-3xl font-bold mb-8">Как работи? Процес в 3 стъпки.</h2>
             <div class="grid md:grid-cols-3 gap-8 text-left">
@@ -115,7 +118,6 @@
             </div>
         </section>
         
-        <!-- What's Inside Section -->
         <section class="py-16 fade-in" style="animation-delay: 0.5s;">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-2">Какво получавате?</h2>
@@ -149,21 +151,19 @@
             </div>
         </section>
 
-        <!-- Final CTA Section -->
         <section class="text-center bg-slate-900 text-white my-16 p-12 rounded-2xl shadow-xl fade-in" style="animation-delay: 0.6s;">
             <h2 class="text-3xl font-extrabold mb-4">Готови ли сте да поемете контрол над вашето AI съдържание?</h2>
             <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Инвестирайте в система, която работи. Спестете часове и създавайте маркетинг съдържание от най-високо ниво.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://www.upwork.com/services/product/marketing-ai-content-engine-25-marketing-prompts-1975521074345615646?ref=fl_profile" target="_blank" class="inline-block bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg hover:bg-slate-200 transition-transform transform hover:scale-105 w-full sm:w-auto">
-                    Отключете AI Content Engine сега
-                </a>
-                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vladiatorai@gmail.com" target="_blank" class="inline-block bg-transparent text-white border-2 border-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-slate-900 transition-colors transform hover:scale-105 w-full sm:w-auto">
+                <!-- Уникален ID за бутона във футъра -->
+                <div id="paypal-container-footer" class="w-full sm:w-auto"></div>
+
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vladiatorai@gmail.com" target="_blank" class="inline-block bg-transparent text-white border-2 border-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-slate-900 transition-colors transform hover:scale-105 w-full sm:w-auto">
                     пиши ми за да ги получиш
                 </a>
             </div>
         </section>
 
-        <!-- Author Section -->
         <section class="fade-in bg-white rounded-2xl shadow-sm p-8 md:p-12 border border-slate-200" style="animation-delay: 0.7s;">
             <div>
                 <h2 class="text-3xl font-bold mb-2 text-center md:text-left">Кой съм аз?</h2>
@@ -173,7 +173,6 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
         <section class="py-16 fade-in" style="animation-delay: 0.8s;">
             <div class="text-center">
                  <h2 class="text-3xl font-bold mb-8">Често Задавани Въпроси</h2>
@@ -199,149 +198,99 @@
         </footer>
 
     </div>
+    
+    <!-- PayPal скриптове за рендиране на бутоните -->
+    <script>
+      // Рендираме ОРИГИНАЛНИЯ бутон в хедъра
+      paypal.HostedButtons({
+        hostedButtonId: "KX6N86RE4U7S4",
+      }).render("#paypal-container-header");
+
+      // Клонираме бутона, след като се появи
+      try {
+        const observer = new MutationObserver((mutationsList, observer) => {
+            for(const mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    const paypalHeaderButton = document.querySelector("#paypal-container-header iframe");
+                    if (paypalHeaderButton) {
+                        const footerContainer = document.querySelector("#paypal-container-footer");
+                        if (footerContainer && footerContainer.children.length === 0) {
+                           const clonedButton = paypalHeaderButton.cloneNode(true);
+                           footerContainer.appendChild(clonedButton);
+                           observer.disconnect(); // Спираме да следим, след като сме го направили
+                        }
+                    }
+                }
+            }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      } catch (error) {
+        console.error("PayPal button cloning failed:", error);
+      }
+    </script>
 
     <script>
         const promptData = {
             "tab-1": {
                 title: "Brand Strategy / Бранд Стратегия",
                 prompts: [
-                    { 
-                        title: "Ideal Client Persona (Advanced)", 
-                        description: "Създава 3 детайлни клиентски персони, включително демографски и психографски данни."
-                    },
-                    { 
-                        title: "Brand Voice DNA Framework", 
-                        description: "Дефинира гласа на Вашия бранд с ясни насоки, примери и адаптации за различни канали."
-                    },
-                    { 
-                        title: "Messaging Matrix for Emotional Resonance", 
-                        description: "Свързва характеристиките на продукта с емоционалните ползи за клиента."
-                    },
-                    { 
-                        title: "Competitor Tone & Positioning Audit", 
-                        description: "Анализира конкуренцията, за да открие пазарни ниши и уникални ъгли за позициониране."
-                    },
-                    { 
-                        title: "Visual Identity and Mood Direction", 
-                        description: "Предлага визуална концепция (цветове, шрифтове), която е в синхрон с гласа на бранда Ви."
-                    }
+                    { title: "Ideal Client Persona (Advanced)", description: "Създава 3 детайлни клиентски персони, включително демографски и психографски данни." },
+                    { title: "Brand Voice DNA Framework", description: "Дефинира гласа на Вашия бранд с ясни насоки, примери и адаптации за различни канали." },
+                    { title: "Messaging Matrix for Emotional Resonance", description: "Свързва характеристиките на продукта с емоционалните ползи за клиента." },
+                    { title: "Competitor Tone & Positioning Audit", description: "Анализира конкуренцията, за да открие пазарни ниши и уникални ъгли за позициониране." },
+                    { title: "Visual Identity and Mood Direction", description: "Предлага визуална концепция (цветове, шрифтове), която е в синхрон с гласа на бранда Ви." }
                 ]
             },
             "tab-2": {
                 title: "Content Planning / Планиране",
                 prompts: [
-                    { 
-                        title: "Content Pillar System", 
-                        description: "Генерира 5 основни стълба на съдържание с подтеми и формати за вашата стратегия."
-                    },
-                    { 
-                        title: "Audience Pain Point Map", 
-                        description: "Идентифицира 10-те най-големи проблема на аудиторията Ви и предлага решения."
-                    },
-                    { 
-                        title: "Viral Hook Generator", 
-                        description: "Създава 20 привличащи вниманието заглавия и кукички, групирани по психологически тригери."
-                    },
-                    { 
-                        title: "Monthly Content Calendar", 
-                        description: "Изготвя пълен 30-дневен календар за съдържание за 3 платформи, готов за изпълнение."
-                    },
-                    { 
-                        title: "Creative Brief Builder", 
-                        description: "Създава стандартизиран шаблон за креативни задания за всяко съдържание."
-                    }
+                    { title: "Content Pillar System", description: "Генерира 5 основни стълба на съдържание с подтеми и формати за вашата стратегия." },
+                    { title: "Audience Pain Point Map", description: "Идентифицира 10-те най-големи проблема на аудиторията Ви и предлага решения." },
+                    { title: "Viral Hook Generator", description: "Създава 20 привличащи вниманието заглавия и кукички, групирани по психологически тригери." },
+                    { title: "Monthly Content Calendar", description: "Изготвя пълен 30-дневен календар за съдържание за 3 платформи, готов за изпълнение." },
+                    { title: "Creative Brief Builder", description: "Създава стандартизиран шаблон за креативни задания за всяко съдържание." }
                 ]
             },
             "tab-3": {
                 title: "Social Media / Социални Мрежи",
                 prompts: [
-                    { 
-                        title: "Social Post Generator PRO", 
-                        description: "Пише 3 варианта на публикация (разказващ, образователен, провокативен) за избрана платформа."
-                    },
-                    { 
-                        title: "Carousel Script Maker", 
-                        description: "Създава пълен 10-слайдов скрипт за Instagram/LinkedIn въртележка, оптимизиран за ангажираност."
-                    },
-                    { 
-                        title: "Caption & Hashtag Optimizer", 
-                        description: "Пренаписва Вашето описание и предлага стратегически хаштагове, групирани по цел."
-                    },
-                    { 
-                        title: "Comment Engagement Assistant", 
-                        description: "Генерира 5 автентични отговора на потребителски коментари, за да поддържа разговора."
-                    },
-                    { 
-                        title: "Social Analytics Insights", 
-                        description: "Анализира статистики и ги превръща в конкретни, изпълними препоръки."
-                    }
+                    { title: "Social Post Generator PRO", description: "Пише 3 варианта на публикация (разказващ, образователен, провокативен) за избрана платформа." },
+                    { title: "Carousel Script Maker", description: "Създава пълен 10-слайдов скрипт за Instagram/LinkedIn въртележка, оптимизиран за ангажираност." },
+                    { title: "Caption & Hashtag Optimizer", description: "Пренаписва Вашето описание и предлага стратегически хаштагове, групирани по цел." },
+                    { title: "Comment Engagement Assistant", description: "Генерира 5 автентични отговора на потребителски коментари, за да поддържа разговора." },
+                    { title: "Social Analytics Insights", description: "Анализира статистики и ги превръща в конкретни, изпълними препоръки." }
                 ]
             },
             "tab-4": {
                 title: "Community / Общност",
                 prompts: [
-                    { 
-                        title: "Community Activation Campaign", 
-                        description: "Проектира 4-седмично предизвикателство за активиране на Вашата онлайн общност."
-                    },
-                    { 
-                        title: "Welcome Sequence Builder", 
-                        description: "Създава 3-стъпкова поредица от приветстващи съобщения за нови членове."
-                    },
-                    { 
-                        title: "Engagement Reactor", 
-                        description: "Генерира 15 въпроса и теми за разговор, създадени да предизвикат смислени дискусии."
-                    },
-                    { 
-                        title: "Moderation Tone Trainer", 
-                        description: "Помага за изграждане на отговори при трудни ситуации, като запазва тона на бранда."
-                    },
-                    { 
-                        title: "Retention Strategy Blueprint", 
-                        description: "Изготвя план за задържане на членовете чрез персонализация и ангажираност."
-                    }
+                    { title: "Community Activation Campaign", description: "Проектира 4-седмично предизвикателство за активиране на Вашата онлайн общност." },
+                    { title: "Welcome Sequence Builder", description: "Създава 3-стъпкова поредица от приветстващи съобщения за нови членове." },
+                    { title: "Engagement Reactor", description: "Генерира 15 въпроса и теми за разговор, създадени да предизвикат смислени дискусии." },
+                    { title: "Moderation Tone Trainer", description: "Помага за изграждане на отговори при трудни ситуации, като запазва тона на бранда." },
+                    { title: "Retention Strategy Blueprint", description: "Изготвя план за задържане на членовете чрез персонализация и ангажираност." }
                 ]
             },
             "tab-5": {
                 title: "Copywriting / Копирайтинг",
                 prompts: [
-                    { 
-                        title: "Brand Story Builder", 
-                        description: "Написва историята на Вашия бранд, използвайки структурата на 'Пътешествието на героя'."
-                    },
-                    { 
-                        title: "Micro Story Generator", 
-                        description: "Създава 3 въздействащи микро-истории (под 100 думи) по зададена тема."
-                    },
-                    { 
-                        title: "Emotional CTA Writer", 
-                        description: "Генерира 10 призива за действие (CTA), които са базирани на различни емоционални тригери."
-                    },
-                    { 
-                        title: "Ad Copy Synthesizer", 
-                        description: "Създава 3 варианта на рекламен текст по формулата AIDA, насочени към различни болки на клиента."
-                    },
-                    { 
-                        title: "Story-to-Reel Script Converter", 
-                        description: "Превръща текст (история, казус) в готов 30-секунден скрипт за видео (Reel/TikTok)."
-                    }
+                    { title: "Brand Story Builder", description: "Написва историята на Вашия бранд, използвайки структурата на 'Пътешествието на героя'." },
+                    { title: "Micro Story Generator", description: "Създава 3 въздействащи микро-истории (под 100 думи) по зададена тема." },
+                    { title: "Emotional CTA Writer", description: "Генерира 10 призива за действие (CTA), които са базирани на различни емоционални тригери." },
+                    { title: "Ad Copy Synthesizer", description: "Създава 3 варианта на рекламен текст по формулата AIDA, насочени към различни болки на клиента." },
+                    { title: "Story-to-Reel Script Converter", description: "Превръща текст (история, казус) в готов 30-секунден скрипт за видео (Reel/TikTok)." }
                 ]
             }
         };
 
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabContentContainer = document.getElementById('tab-content');
-        const purchaseLink = "https://www.upwork.com/services/product/marketing-ai-content-engine-25-marketing-prompts-1975521074345615646?ref=fl_profile";
-
+        
         function renderTabContent(tabId) {
             const content = promptData[tabId];
             if (!content) return;
 
             const promptsHtml = content.prompts.map((prompt, index) => {
-                const buttonHtml = `<a href="${purchaseLink}" target="_blank" class="unlock-btn ml-auto flex-shrink-0 text-xs bg-indigo-100 text-indigo-700 hover:bg-indigo-200 font-semibold py-1 px-3 rounded-full transition-colors no-underline">
-                                        🔑 Отключи всички 25+
-                                    </a>`;
-
                 return `
                     <div class="prompt-item flex items-center p-4 rounded-lg transition-colors duration-200">
                         <div class="w-8 h-8 flex-shrink-0 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm mr-4">${index + 1}</div>
@@ -349,7 +298,6 @@
                             <h4 class="font-semibold text-slate-800">${prompt.title}</h4>
                             <p class="text-sm text-slate-500">${prompt.description}</p>
                         </div>
-                        ${buttonHtml}
                     </div>
                 `;
             }).join('');
@@ -377,10 +325,8 @@
 
         tabButtons.forEach(btn => btn.addEventListener('click', handleTabClick));
 
-        // Initial render for the first tab
         renderTabContent('tab-1');
 
-        // Animate on scroll
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = {
             threshold: 0.1,
