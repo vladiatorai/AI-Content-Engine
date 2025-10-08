@@ -358,14 +358,14 @@
         renderTabContent('tab-1');
 
         // Animate on scroll
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+        threshold: 0.1, // Променено от 0.2, за да се задейства анимацията по-рано
+        rootMargin: "0px 0px 0px 0px" // Премахнат отрицателния марджин за по-бърза реакция
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
                     return;
                 } else {
                     entry.target.style.animationPlayState = 'running';
@@ -383,4 +383,5 @@
 
 </body>
 </html>
+
 
