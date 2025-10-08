@@ -59,11 +59,36 @@
             <div class="bg-slate-900 rounded-2xl shadow-2xl p-6 md:p-8">
                 <!-- Tabs -->
                 <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-6">
-                    <button class="tab-btn active text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-1">Brand Strategy</button>
-                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-2">Content Planning</button>
-                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-3">Social Media</button>
-                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-4">Community</button>
-                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-2 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-5">Copywriting</button>
+                    <button class="tab-btn active text-sm md:text-base font-semibold px-4 py-3 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-1">
+                        <div class="text-center leading-tight">
+                            <span>Brand Strategy</span>
+                            <span class="block text-xs font-normal">Бранд Стратегия</span>
+                        </div>
+                    </button>
+                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-3 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-2">
+                        <div class="text-center leading-tight">
+                            <span>Content Planning</span>
+                            <span class="block text-xs font-normal">Планиране на Съдържание</span>
+                        </div>
+                    </button>
+                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-3 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-3">
+                        <div class="text-center leading-tight">
+                            <span>Social Media</span>
+                            <span class="block text-xs font-normal">Социални Мрежи</span>
+                        </div>
+                    </button>
+                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-3 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-4">
+                        <div class="text-center leading-tight">
+                            <span>Community</span>
+                            <span class="block text-xs font-normal">Общност</span>
+                        </div>
+                    </button>
+                    <button class="tab-btn text-sm md:text-base font-semibold px-4 py-3 rounded-full bg-slate-700 text-slate-200 hover:bg-slate-600" data-tab="tab-5">
+                        <div class="text-center leading-tight">
+                            <span>Copywriting</span>
+                            <span class="block text-xs font-normal">Копирайтинг</span>
+                        </div>
+                    </button>
                 </div>
 
                 <!-- Tab Content -->
@@ -178,7 +203,7 @@
     <script>
         const promptData = {
             "tab-1": {
-                title: "Brand Strategy & Voice",
+                title: "Brand Strategy & Voice / Бранд Стратегия и Глас",
                 prompts: [
                     { 
                         title: "Ideal Client Persona (Advanced)", 
@@ -203,7 +228,7 @@
                 ]
             },
             "tab-2": {
-                title: "Content Ideation & Planning",
+                title: "Content Ideation & Planning / Планиране на Съдържание",
                 prompts: [
                     { 
                         title: "Content Pillar System", 
@@ -228,7 +253,7 @@
                 ]
             },
             "tab-3": {
-                title: "Social Media Creation",
+                title: "Social Media Creation / Създаване за Социални Мрежи",
                 prompts: [
                     { 
                         title: "Social Post Generator PRO", 
@@ -253,7 +278,7 @@
                 ]
             },
             "tab-4": {
-                title: "Community Building & Engagement",
+                title: "Community Building & Engagement / Изграждане на Общност",
                 prompts: [
                     { 
                         title: "Community Activation Campaign", 
@@ -278,7 +303,7 @@
                 ]
             },
             "tab-5": {
-                title: "Storytelling & Copywriting",
+                title: "Storytelling & Copywriting / Копирайтинг и Истории",
                 prompts: [
                     { 
                         title: "Brand Story Builder", 
@@ -341,7 +366,9 @@
         }
 
         function handleTabClick(e) {
-            const clickedTab = e.target;
+            const clickedTab = e.target.closest('.tab-btn'); // КОРЕКЦИЯ: Тази линия гарантира, че винаги намираме бутона
+            if (!clickedTab) return; // Предпазна мярка
+
             const tabId = clickedTab.dataset.tab;
 
             tabButtons.forEach(btn => {
@@ -383,5 +410,7 @@
 
 </body>
 </html>
+
+
 
 
